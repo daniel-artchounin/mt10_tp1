@@ -8,6 +8,10 @@ def elementNeutre(table, ensemble):
 			for j, value in enumerate(ligne):
 				if table[i][ensemble[indice]] !=  i or table[j][ensemble[indice]] !=  j:
 					ok = True
+					# print("mort") # Test
+					# print(i) # Test
+					# print(j) # Test
+					# print(ensemble[indice]) # Test
 					# On passe a l'element suivant
 					break
 			if ok == True:
@@ -26,7 +30,7 @@ tableau = [[0,1,2,3],[1,2,3,0],[2,3,0,1],[3,0,1,2]]
 ensemble = [0,1,2,3]
 print(elementNeutre(tableau, ensemble))
 
-tableau2 = [[(0,0),(0,1),(1,0),(1,1)],[(0,1),(0,0),(1,1),(1,0)],[(1,0),(1,1),(0,0),(0,1)],[(1,1),(1,0),(0,1),(0,0)]]
-ensemble2 = [(0,0),(0,1),(1,0),(1,1)]
-print(elementNeutre(tableau2, ensemble2))
-
+dico = {0:(0,0),1:(0,1),2:(1,0),3:(1,1)}
+tableau2 = [[0, 1, 2 ,3], [1, 0, 3, 2], [2, 3, 0, 1], [3, 2, 1, 0]]
+ensemble2 = [0, 1, 2, 3]
+print(dico[elementNeutre(tableau2, ensemble2)])
