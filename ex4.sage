@@ -6,9 +6,9 @@ def elementSymetrique(table, ensemble):
 		return neutre
 	symetriques = {}
 	for i, ligne in enumerate(table):
-		# Afin que cette fonction puisse être également utilisée pour
-		# des monoïdes non groupes, on ne va pas considérer l'unicité
-		# du symétrique.
+		# Afin que cette fonction puisse etre egalement utilisee pour
+		# des monoides non groupes, on ne va pas considerer l'unicite
+		# du symetrique.
 		symetriques[ensemble[i]] = []
 		for j in range(len(ligne)):
 			if table[i][j] == neutre and table[j][i] == neutre:
@@ -16,13 +16,11 @@ def elementSymetrique(table, ensemble):
 	return symetriques
 			
 if __name__ == "__main__":
-	# Ok tableau symetrique
 	print('***************************')
 	tableau = [[0, 1, 2, 3], [1, 2, 3, 0], [2, 3, 0, 1], [3, 0, 1, 2]]
 	ensemble = [0, 1, 2, 3]
 	print(elementSymetrique(tableau, ensemble))
 
-	# Ok tableau symetrique
 	print('***************************')
 	tableau2 = [[(0,0), (0,1), (1,0), (1,1)], [(0,1), (0,0), (1,1), (1,0)], [(1,0), (1,1), (0,0), (0,1)], [(1,1), (1,0), (0,1), (0,0)]]
 	ensemble2 = [(0,0), (0,1), (1,0), (1,1)]
