@@ -11,7 +11,7 @@ def elementSymetrique(table, ensemble):
 		# du symetrique.
 		symetriques[ensemble[i]] = []
 		for j in range(len(ligne)):
-			if table[i][j] == neutre and table[j][i] == neutre:
+			if ensemble[table[i][j]] == neutre and ensemble[table[j][i]] == neutre:
 				symetriques[ensemble[i]].append(ensemble[j])
 	return symetriques
 			
@@ -22,6 +22,6 @@ if __name__ == "__main__":
 	print(elementSymetrique(tableau, ensemble))
 
 	print('***************************')
-	tableau2 = [[(0,0), (0,1), (1,0), (1,1)], [(0,1), (0,0), (1,1), (1,0)], [(1,0), (1,1), (0,0), (0,1)], [(1,1), (1,0), (0,1), (0,0)]]
+	tableau2 = [[0, 1, 2, 3], [1, 0, 3, 2], [2, 3, 0, 1], [3, 2, 1, 0]]
 	ensemble2 = [(0,0), (0,1), (1,0), (1,1)]
 	print(elementSymetrique(tableau2, ensemble2))

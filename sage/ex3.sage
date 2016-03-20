@@ -2,7 +2,7 @@ def elementNeutre(table, ensemble):
 	for alpha in range(len(ensemble)):
 		find = True # Pour savoir si on a trouve un element neutre 
 		for i in range(len(table)):
-			if table[i][alpha] != ensemble[i] or table[alpha][i] !=  ensemble[i]:
+			if ensemble[table[i][alpha]] != ensemble[i] or ensemble[table[alpha][i]] !=  ensemble[i]:
 				find = False				
 				break # On passe a l'element suivant
 		if find:
@@ -14,6 +14,6 @@ if __name__ == "__main__":
 	ensemble = [0, 1, 2, 3]
 	print(elementNeutre(tableau, ensemble))
 
-	tableau2 = [[(0,0), (0,1), (1,0), (1,1)], [(0,1), (0,0), (1,1), (1,0)], [(1,0), (1,1), (0,0), (0,1)], [(1,1), (1,0), (0,1), (0,0)]]
+	tableau2 = [[0, 1, 2, 3], [1, 0, 3, 2], [2, 3, 0, 1], [3, 2, 1, 0]]
 	ensemble2 = [(0,0), (0,1), (1,0), (1,1)]
 	print(elementNeutre(tableau2, ensemble2))
