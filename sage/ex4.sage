@@ -14,6 +14,13 @@ def elementSymetrique(table, ensemble):
 			if ensemble[table[i][j]] == neutre and ensemble[table[j][i]] == neutre:
 				symetriques[ensemble[i]].append(ensemble[j])
 	return symetriques
+
+def isSymetric(table, ensemble):
+	symetricsDict = elementSymetrique(table, ensemble)
+	for key in symetricsDict:
+		if len(symetricsDict[key]) != 1:
+			return False
+	return True
 			
 if __name__ == "__main__":
 	print('***************************')
