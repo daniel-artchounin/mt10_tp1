@@ -27,7 +27,6 @@ def generateAutomorphisms(t):
 			automorphismes.append(permutation)
 	return automorphismes
 
-
 def generatePermutation(perm, n):
 	"""This function generates and returns a list which represents a permutation application.
 
@@ -53,9 +52,21 @@ def generatePermutation(perm, n):
 			permutationApplication[currentElement] = nextElement
 	return permutationApplication
 
+def areIsomorphms(t, tPrime):
+	if len(t) != len(tPrime):
+		return False
+	s = SymmetricGroup(len(t))
+	sList = s.list()
+	for i in range(len(s)):
+		permutation = generatePermutation(sList[i], len(t))
+		m = isMorphism(t, tPrime, permutation) # We check if our permutation is a morphism.
+		if m:
+			return True
+	return False
 
 
 if __name__ == "__main__":
+	########################## Question 7.1 ##########################
 	print('******************************************')
 	tableau = [[0, 1, 2, 3], [1, 2, 3, 0], [2, 3, 0, 1], [3, 0, 1, 2]]
 	ensemble = [0, 1, 2, 3]
@@ -68,8 +79,12 @@ if __name__ == "__main__":
 	f2 = [0, 1, 2, 3] # Identité
 	print(isMorphism(tableau2, tableau2, f2))
 
+	########################## Question 7.2 ##########################
 	print('******************************************')
 	print(generateAutomorphisms(tableau))
 
 	print('******************************************')
 	print(generateAutomorphisms(tableau2))
+
+	########################## Question 7.3 ##########################
+	print(areIsomorphms(tableau, tableau2))
