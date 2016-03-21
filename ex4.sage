@@ -21,14 +21,3 @@ def isSymetric(table, ensemble):
 		if len(symetricsDict[key]) != 1:
 			return False
 	return True
-			
-if __name__ == "__main__":
-	print('***************************')
-	tableau = [[0, 1, 2, 3], [1, 2, 3, 0], [2, 3, 0, 1], [3, 0, 1, 2]]
-	ensemble = [0, 1, 2, 3]
-	print(elementSymetrique(tableau, ensemble))
-
-	print('***************************')
-	tableau2 = [[0, 1, 2, 3], [1, 0, 3, 2], [2, 3, 0, 1], [3, 2, 1, 0]]
-	ensemble2 = [(0,0), (0,1), (1,0), (1,1)]
-	print(elementSymetrique(tableau2, ensemble2))
