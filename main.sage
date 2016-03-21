@@ -1,5 +1,7 @@
 load("ex3.sage")
 load("ex4.sage")
+load("ex5.sage")
+load("ex7.sage")
 
 tableau = [[0, 1, 2, 3], [1, 2, 3, 0], [2, 3, 0, 1], [3, 0, 1, 2]]
 ensemble = [0, 1, 2, 3]
