@@ -162,7 +162,7 @@ dG6CayleyTableList = dG6CayleyTable.table()
 dG6Elements = dG6CayleyTableList[0]
 print("\tElements : {}".format(dG6Elements))
 print("\tLoi :")
-print(H.cayley_table("digits"))
+print(dG6.cayley_table("digits"))
 print("\tOrdre : {}".format(dG6.order()))
 dG6ElementNeutre = elementNeutre(dG6CayleyTableList, dG6Elements)
 if dG6ElementNeutre is None:
