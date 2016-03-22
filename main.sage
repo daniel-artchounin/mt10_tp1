@@ -2,6 +2,7 @@ load("ex3.sage")
 load("ex4.sage")
 load("ex5.sage")
 load("ex7.sage")
+load("ex9.sage")
 
 tableau = [[0, 1, 2, 3], [1, 2, 3, 0], [2, 3, 0, 1], [3, 0, 1, 2]]
 ensemble = [0, 1, 2, 3]
@@ -74,19 +75,19 @@ else:
 print('\n\n########################## Question 9 ##########################\n')
 #------------------------- Question 9.1 -----------------------#
 print('#------------------------- Question 9.1 -----------------------#\n')
-if elementNeutre(carreLatin1, ensembleLatin) is not None and estAssociative(carreLatin1, ensembleLatin) and isSymetric(carreLatin1, ensembleLatin):
+if isGroup(carreLatin1, ensembleLatin):
 	print("Le carré latin I est un groupe")
 else:
 	print("Le carré latin I n'est pas un groupe")
-if elementNeutre(carreLatin2, ensembleLatin) is not None and estAssociative(carreLatin2, ensembleLatin) and isSymetric(carreLatin2, ensembleLatin):
+if isGroup(carreLatin2, ensembleLatin):
 	print("Le carré latin II est un groupe")
 else:
 	print("Le carré latin II n'est pas un groupe")
-if elementNeutre(carreLatin3, ensembleLatin) is not None and estAssociative(carreLatin3, ensembleLatin) and isSymetric(carreLatin3, ensembleLatin):
+if isGroup(carreLatin3, ensembleLatin):
 	print("Le carré latin III est un groupe")
 else:
 	print("Le carré latin III n'est pas un groupe")
-if elementNeutre(carreLatin4, ensembleLatin) is not None and estAssociative(carreLatin4, ensembleLatin) and isSymetric(carreLatin4, ensembleLatin):
+if isGroup(carreLatin4, ensembleLatin):
 	print("Le carré latin IV est un groupe")
 else:
 	print("Le carré latin IV n'est pas un groupe")
@@ -150,6 +151,10 @@ if handMadeAssociative:
 	print("\tLa loi est associative")
 else:
 	print("\tLa loi n'est pas associative")
+if isGroup(handMadeLaw, handMadeElements):
+	print("\tHand made triplet est un groupe")
+else:
+	print("\tHand made triplet n'est pas un groupe")
 handMadeAutomorphisms = generateAutomorphisms(handMadeLaw)
 print("\tLe(s) automorphisme(s) est/sont : {}".format(handMadeAutomorphisms))
 
@@ -179,6 +184,10 @@ if dG6Associative:
 	print("\tLa loi est associative")
 else:
 	print("\tLa loi n'est pas associative")
+if isGroup(dG6CayleyTableList, dG6Elements):
+	print("\tTriplet 1 est un groupe")
+else:
+	print("\tTriplet 1 n'est pas un groupe")
 dG6Automorphisms = generateAutomorphisms(dG6CayleyTableList)
 print("\tLe(s) automorphisme(s) est/sont : {}".format(dG6Automorphisms))
 
@@ -208,6 +217,10 @@ if s3Associative:
 	print("\tLa loi est associative")
 else:
 	print("\tLa loi n'est pas associative")
+if isGroup(s3CayleyTableList, s3Elements):
+	print("\tTriplet 2 est un groupe")
+else:
+	print("\tTriplet 2 n'est pas un groupe")
 s3Automorphisms = generateAutomorphisms(s3CayleyTableList)
 print("\tLe(s) automorphisme(s) est/sont : {}".format(s3Automorphisms))
 print("#------------------------- Triplet 1 et 2 -----------------------#\n")
