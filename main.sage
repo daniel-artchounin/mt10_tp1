@@ -18,15 +18,11 @@ carreLatin4 = [[0, 1, 2, 3], [1, 3, 0, 2], [2, 0, 3, 1], [3, 2, 1, 0]]
 print('########################## Question 2 ##########################\n')
 print("Autre manière de former les tables de lois.")
 print("Pour la loi (Z/4Z, +, 0) : ")
-Z4 = CyclicPermutationGroup(4)
-Z4CayleyTableAlphabet = Z4.cayley_table()
-Z4CayleyTableInteger = Z4CayleyTableAlphabet.table()
-print(Z4CayleyTableInteger)
+Z4 = CyclicPermutationGroup(4) 
+print(Z4.cayley_table("digits"))
 print("Pour la loi (Z/2Z * Z/2Z, +, 0) : ")
 Z2Z2 = KleinFourGroup()
-Z2Z2CayleyTableAlphabet = Z2Z2.cayley_table()
-Z2Z2CayleyTableInteger = Z2Z2CayleyTableAlphabet.table()
-print(Z2Z2CayleyTableInteger)
+print(Z2Z2.cayley_table("digits"))
 
 ########################## Question 3 ##########################
 print('\n\n########################## Question 3 ##########################\n')
