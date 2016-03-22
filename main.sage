@@ -125,3 +125,93 @@ if areIsomorphms(tableau2, carreLatin4):
 	print("(Z/2Z * Z/2Z, +, 0) et le carré latin IV sont isomorphes")
 else:
 	print("(Z/2Z * Z/2Z, +, 0) et le carré latin IV ne sont pas isomorphes")
+
+########################## Question 10 ##########################
+print('\n\n########################## Question 10 ##########################\n')
+# Hand-made triplet
+print("#------------------------- Hand made triplet  -----------------------#\n")
+handMadeLaw = [[0, 1, 2, 3, 4], [1, 0, 3, 2, 4], [2, 3, 1, 0, 4], [3, 2, 0, 1, 4], [1, 2, 3, 4, 0]]
+handMadeElements = [0, 1, 2, 3, 4]
+print("\tElements : {}".format(handMadeElements))
+print("\tLoi :")
+print(handMadeLaw)
+handMadeElementNeutre = elementNeutre(handMadeLaw, handMadeElements)
+if handMadeElementNeutre is None:
+	print("\tIl n'y a pas d'element neutre")
+else:
+	print("\tL'element neutre est : {}".format(handMadeElementNeutre))
+handMadeElementSymetrique = elementSymetrique(handMadeLaw, handMadeElements)
+if handMadeElementSymetrique is not None and len(dG6ElementSymetrique) == len(dG6Elements):
+	print("\tLa table des symétrique est : {}".format(handMadeElementSymetrique))
+else:
+	print("\tIl n'y a pas de table des symétriques")	
+handMadeAssociative = estAssociative(handMadeLaw, handMadeElements)
+if handMadeAssociative:
+	print("\tLa loi est associative")
+else:
+	print("\tLa loi n'est pas associative")
+handMadeAutomorphisms = generateAutomorphisms(handMadeLaw)
+print("\tLe(s) automorphisme(s) est/sont : {}".format(handMadeAutomorphisms))
+
+
+# Dihedral group of order 6
+dG6 = DihedralGroup(3)
+print("#------------------------- Triplet 1  -----------------------#\n")
+dG6CayleyTable = dG6.cayley_table()
+dG6CayleyTableList = dG6CayleyTable.table()
+dG6Elements = dG6CayleyTableList[0]
+print("\tElements : {}".format(dG6Elements))
+print("\tLoi :")
+print(H.cayley_table("digits"))
+print("\tOrdre : {}".format(dG6.order()))
+dG6ElementNeutre = elementNeutre(dG6CayleyTableList, dG6Elements)
+if dG6ElementNeutre is None:
+	print("\tIl n'y a pas d'element neutre")
+else:
+	print("\tL'element neutre est : {}".format(dG6ElementNeutre))
+dG6ElementSymetrique = elementSymetrique(dG6CayleyTableList, dG6Elements)
+if dG6ElementSymetrique is not None and len(dG6ElementSymetrique) == len(dG6Elements):
+	print("\tLa table des symétrique est : {}".format(dG6ElementSymetrique))
+else:
+	print("\tIl n'y a pas de table des symétriques")	
+dG6Associative = estAssociative(dG6CayleyTableList, dG6Elements)
+if dG6Associative:
+	print("\tLa loi est associative")
+else:
+	print("\tLa loi n'est pas associative")
+dG6Automorphisms = generateAutomorphisms(dG6CayleyTableList)
+print("\tLe(s) automorphisme(s) est/sont : {}".format(dG6Automorphisms))
+
+# Symmetric group of order 6
+s3 = SymmetricGroup(3)
+print("#------------------------- Triplet 2  -----------------------#\n")
+s3CayleyTable = s3.cayley_table()
+s3CayleyTableList = s3CayleyTable.table()
+s3Elements = s3CayleyTableList[0]
+print("\tElements : {}".format(s3Elements))
+print("\tLoi :")
+print(s3.cayley_table("digits"))
+print("\tOrdre : {}".format(s3.order()))
+s3ElementNeutre = elementNeutre(s3CayleyTableList, s3Elements)
+if s3ElementNeutre is None:
+	print("\tIl n'y a pas d'element neutre")
+else:
+	print("\tL'element neutre est : {}".format(s3ElementNeutre))
+s3ElementSymetrique = elementSymetrique(s3CayleyTableList, s3Elements)
+if s3ElementSymetrique is not None and len(s3ElementSymetrique) == len(s3Elements):
+	print("\tLa table des symétrique est : {}".format(s3ElementSymetrique))	
+else:
+	print("\tIl n'y a pas de table des symétriques")
+	
+s3Associative = estAssociative(s3CayleyTableList, s3Elements)
+if s3Associative:
+	print("\tLa loi est associative")
+else:
+	print("\tLa loi n'est pas associative")
+s3Automorphisms = generateAutomorphisms(s3CayleyTableList)
+print("\tLe(s) automorphisme(s) est/sont : {}".format(s3Automorphisms))
+print("#------------------------- Triplet 1 et 2 -----------------------#\n")
+if areIsomorphms(dG6CayleyTableList, s3CayleyTableList):
+	print("Les triplets 1 et 2 sont isomorphes.")
+else:
+	print("Les triplets 1 et 2 ne sont pas isomorphes.")
