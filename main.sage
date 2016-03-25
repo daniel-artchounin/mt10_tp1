@@ -21,19 +21,19 @@ print("Autre manière de former les tables de lois.")
 print("Pour la loi (Z/4Z, +, 0) : ")
 Z4 = CyclicPermutationGroup(4) 
 print(Z4.cayley_table("digits"))
-print("Pour la loi (Z/2Z * Z/2Z, +, 0) : ")
+print("Pour la loi (Z/2Z * Z/2Z, +, (0, 0)) : ")
 Z2Z2 = KleinFourGroup()
 print(Z2Z2.cayley_table("digits"))
 
 ########################## Question 3 ##########################
 print('\n\n########################## Question 3 ##########################\n')
 print("L'élément neutre de la loi (Z/4Z, +, 0) est : {}".format(elementNeutre(tableau, ensemble)))
-print("L'élément neutre de la loi (Z/2Z * Z/2Z, +, 0) est : {}".format(elementNeutre(tableau2, ensemble2)))
+print("L'élément neutre de la loi (Z/2Z * Z/2Z, +, (0, 0)) est : {}".format(elementNeutre(tableau2, ensemble2)))
 
 ########################## Question 4 ##########################
 print('\n\n########################## Question 4 ##########################\n')
 print("La table des symétriques de la loi (Z/4Z, +, 0) est : {}".format(elementSymetrique(tableau, ensemble)))
-print("La table des symétriques de la loi (Z/2Z * Z/2Z, +, 0) est : {}".format(elementSymetrique(tableau2, ensemble2)))
+print("La table des symétriques de la loi (Z/2Z * Z/2Z, +, (0, 0)) est : {}".format(elementSymetrique(tableau2, ensemble2)))
 
 ########################## Question 5 ##########################
 print('\n\n########################## Question 5 ##########################\n')
@@ -42,9 +42,9 @@ if estAssociative(tableau, ensemble):
 else:
 	print("La loi (Z/4Z, +, 0) n'est pas associative")
 if estAssociative(tableau2, ensemble2):
-	print("La loi (Z/2Z * Z/2Z, +, 0) est associative")
+	print("La loi (Z/2Z * Z/2Z, +, (0, 0)) est associative")
 else:
-	print("La loi (Z/2Z * Z/2Z, +, 0) n'est pas associative")
+	print("La loi (Z/2Z * Z/2Z, +, (0, 0)) n'est pas associative")
 
 ########################## Question 7 ##########################
 print('\n\n########################## Question 7 ##########################\n')
@@ -57,19 +57,19 @@ else:
 	print("L'application {} de (Z/4Z, +, 0) vers (Z/4Z, +, 0) n'est pas un morphisme".format(f))
 f2 = [0, 1, 2, 3] # Identité
 if isMorphism(tableau2, tableau2, f2):
-	print("L'application {} de (Z/2Z * Z/2Z, +, 0) vers (Z/2Z * Z/2Z, +, 0) est un morphisme".format(f2))
+	print("L'application {} de (Z/2Z * Z/2Z, +, (0, 0)) vers (Z/2Z * Z/2Z, +, (0, 0)) est un morphisme".format(f2))
 else:
-	print("L'application {} de (Z/2Z * Z/2Z, +, 0) vers (Z/2Z * Z/2Z, +, 0) n'est pas un morphisme".format(f2))
+	print("L'application {} de (Z/2Z * Z/2Z, +, (0, 0)) vers (Z/2Z * Z/2Z, +, (0, 0)) n'est pas un morphisme".format(f2))
 #------------------------- Question 7.2 -----------------------#
 print('#------------------------- Question 7.2 -----------------------#\n')
 print("Tous les automorphismes de (Z/4Z, +, 0) : {}".format(generateAutomorphisms(tableau)))
-print("Tous les automorphismes de (Z/2Z * Z/2Z, +, 0) : {}".format(generateAutomorphisms(tableau2)))
+print("Tous les automorphismes de (Z/2Z * Z/2Z, +, (0, 0)) : {}".format(generateAutomorphisms(tableau2)))
 #------------------------- Question 7.3 -----------------------#
 print('#------------------------- Question 7.3 -----------------------#\n')
 if areIsomorphms(tableau, tableau2):
-	print("(Z/4Z, +, 0) et (Z/2Z * Z/2Z, +, 0) sont isomorphes")
+	print("(Z/4Z, +, 0) et (Z/2Z * Z/2Z, +, (0, 0)) sont isomorphes")
 else:
-	print("(Z/4Z, +, 0) et (Z/2Z * Z/2Z, +, 0) ne sont pas isomorphes")
+	print("(Z/4Z, +, 0) et (Z/2Z * Z/2Z, +, (0, 0)) ne sont pas isomorphes")
 
 ########################## Question 9 ##########################
 print('\n\n########################## Question 9 ##########################\n')
@@ -111,21 +111,21 @@ else:
 	print("(Z/4Z, +, 0) et le carré latin IV ne sont pas isomorphes")
 
 if areIsomorphms(tableau2, carreLatin1):
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin I sont isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin I sont isomorphes")
 else:
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin I ne sont pas isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin I ne sont pas isomorphes")
 if areIsomorphms(tableau2, carreLatin2):
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin II sont isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin II sont isomorphes")
 else:
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin II ne sont pas isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin II ne sont pas isomorphes")
 if areIsomorphms(tableau2, carreLatin3):
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin III sont isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin III sont isomorphes")
 else:
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin III ne sont pas isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin III ne sont pas isomorphes")
 if areIsomorphms(tableau2, carreLatin4):
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin IV sont isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin IV sont isomorphes")
 else:
-	print("(Z/2Z * Z/2Z, +, 0) et le carré latin IV ne sont pas isomorphes")
+	print("(Z/2Z * Z/2Z, +, (0, 0)) et le carré latin IV ne sont pas isomorphes")
 
 ########################## Question 10 ##########################
 print('\n\n########################## Question 10 ##########################\n')
